@@ -1,0 +1,32 @@
+name: Publish to NuGet
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for NUGET_API_KEY
+        id: guard
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: |
+          if [ -z "$NUGET_API_KEY" ]; then
+            echo "NUGET_API_KEY not configured — skipping publish. Add it in repo Settings > Secrets > Actions to enable."
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.publish == 'true'
+      - uses: actions/setup-dotnet@v4
+        if: steps.guard.outputs.publish == 'true'
+        with:
+          dotnet-version: 8.0.x
+      - name: Pack
+        if: steps.guard.outputs.publish == 'true'
+        run: dotnet pack src/AnotaApi/AnotaApi.csproj -c Release -o out
+      - name: Push
+        if: steps.guard.outputs.publish == 'true'
+        run: dotnet nuget push "out/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

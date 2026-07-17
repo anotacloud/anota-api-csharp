@@ -13,7 +13,15 @@ so you are never boxed in by rigid model classes.
 
 ## Install
 
-A NuGet package is coming. Until then, add the SDK to your app by one of:
+Once the first release is published, install from NuGet:
+
+```bash
+dotnet add package Anota.Api
+```
+
+The package publishes automatically when a GitHub release is created (it becomes
+available on [nuget.org](https://www.nuget.org/packages/Anota.Api) after that first
+run). Meanwhile, or to work from source, add the SDK to your app by one of:
 
 - **Clone and reference the project:**
   ```bash

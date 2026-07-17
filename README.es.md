@@ -13,7 +13,15 @@ así que nunca te limitan las clases de modelo rígidas.
 
 ## Instalación
 
-Un paquete de NuGet está por llegar. Mientras tanto, agrega el SDK a tu aplicación de
+Cuando se publique la primera versión, instala desde NuGet:
+
+```bash
+dotnet add package Anota.Api
+```
+
+El paquete se publica automáticamente al crear una release en GitHub (queda disponible
+en [nuget.org](https://www.nuget.org/packages/Anota.Api) tras esa primera ejecución).
+Mientras tanto, o para trabajar desde el código fuente, agrega el SDK a tu aplicación de
 una de estas formas:
 
 - **Clona y referencia el proyecto:**
