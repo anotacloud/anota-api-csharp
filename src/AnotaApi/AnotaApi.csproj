@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <!-- Package metadata (for a future NuGet publish) -->
+    <PackageId>Anota.Api</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>anota (anota.cloud)</Authors>
+    <Company>anota</Company>
+    <Description>Official C#/.NET client for the anota API — forms, submissions, logic, webhooks.</Description>
+    <PackageProjectUrl>https://anota.cloud/developers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/anotacloud/anota-api-csharp</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>anota;forms;api-client;sdk;csharp</PackageTags>
+  </PropertyGroup>
+
+</Project>

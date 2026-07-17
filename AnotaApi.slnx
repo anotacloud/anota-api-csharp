@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/examples/">
+    <Project Path="examples/EndToEnd/EndToEnd.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/AnotaApi/AnotaApi.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AnotaApi.Tests/AnotaApi.Tests.csproj" />
+  </Folder>
+</Solution>
